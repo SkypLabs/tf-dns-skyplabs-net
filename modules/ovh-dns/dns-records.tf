@@ -12,11 +12,14 @@ locals {
 }
 
 resource "ovh_domain_zone_record" "this" {
-  count = length(local.records)
+  for_each = {
+    for record in local.records :
+    "${record.name}_${record.type}_${record.target}" => record
+  }
 
   zone      = var.zone
-  subdomain = local.records[count.index].name
-  fieldtype = local.records[count.index].type
-  ttl       = local.records[count.index].ttl
-  target    = local.records[count.index].target
+  subdomain = each.value.name
+  fieldtype = each.value.type
+  ttl       = each.value.ttl
+  target    = each.value.target
 }
