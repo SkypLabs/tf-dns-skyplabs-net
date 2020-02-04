@@ -14,7 +14,7 @@ variable "zone" {
 
 variable "records" {
   description = "DNS records"
-  type = list(object({
+  type = set(object({
     name    = string
     type    = string
     ttl     = number
