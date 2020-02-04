@@ -1,5 +1,5 @@
 locals {
-  flattened_records = [
+  records = flatten([
     for record in var.records : [
       for target in record.targets : {
         name   = record.name
@@ -8,15 +8,15 @@ locals {
         target = target
       }
     ]
-  ]
+  ])
 }
 
 resource "ovh_domain_zone_record" "this" {
-  for_each = local.flattened_records
+  count = length(local.records)
 
   zone      = var.zone
-  subdomain = each.value.name
-  fieldtype = each.value.type
-  ttl       = each.value.ttl
-  target    = each.value.target
+  subdomain = local.records[count.index].name
+  fieldtype = local.records[count.index].type
+  ttl       = local.records[count.index].ttl
+  target    = local.records[count.index].target
 }
