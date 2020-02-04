@@ -1,5 +1,5 @@
 locals {
-  zone = "skyplabs.net."
+  zone = "skyplabs.net"
 
   dns_records = [
     {
