@@ -1,4 +1,4 @@
 output "records" {
   description = "DNS records"
-  value       = module.dns_records.records
+  value       = ovh_domain_zone_record.this
 }

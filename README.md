@@ -20,7 +20,9 @@ No provider.
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| records | DNS records |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
