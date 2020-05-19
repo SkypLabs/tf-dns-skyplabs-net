@@ -71,6 +71,14 @@ locals {
       ]
     },
     {
+      name = "_dmarc"
+      type = "TXT"
+      ttl  = 0,
+      targets = [
+        "\"v=DMARC1; p=quarantine; adkim=s\"",
+      ]
+    },
+    {
       name = "mta-sts"
       type = "CNAME"
       ttl  = 0,
