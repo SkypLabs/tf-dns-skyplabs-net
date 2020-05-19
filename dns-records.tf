@@ -5,6 +5,7 @@ locals {
     # -------------------------------------------------- #
     # DNS zone configuration
     # -------------------------------------------------- #
+
     {
       name = ""
       type = "NS"
@@ -22,6 +23,7 @@ locals {
         "213.186.33.5",
       ]
     },
+    # https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain.
     {
       name = "blog"
       type = "CNAME"
@@ -46,9 +48,12 @@ locals {
         "\"4|https://blog.skyplabs.net\"",
       ]
     },
+
     # -------------------------------------------------- #
     # Email configuration
     # -------------------------------------------------- #
+
+    # Configuration for Tutanota: https://tutanota.com/howto#custom-domain.
     {
       name = ""
       type = "MX"
@@ -81,9 +86,11 @@ locals {
         "_mta-sts.tutanota.com.",
       ]
     },
+
     # -------------------------------------------------- #
     # Domain verification
     # -------------------------------------------------- #
+
     {
       name = ""
       type = "TXT"
@@ -100,9 +107,11 @@ locals {
         "\"brave-ledger-verification=a3b2ef122a15353fdaaf5bfbbe25bc0976d14bf8cc86ff91b8eba878c1da56f1\"",
       ]
     },
+
     # -------------------------------------------------- #
     # Misc.
     # -------------------------------------------------- #
+
     {
       name = ""
       type = "TXT"
