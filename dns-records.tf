@@ -71,6 +71,22 @@ locals {
       ]
     },
     {
+      name = "s1._domainkey"
+      type = "CNAME"
+      ttl  = 0,
+      targets = [
+        "s1._domainkey.tutanota.de.",
+      ]
+    },
+    {
+      name = "s2._domainkey"
+      type = "CNAME"
+      ttl  = 0,
+      targets = [
+        "s2._domainkey.tutanota.de.",
+      ]
+    },
+    {
       name = "_dmarc"
       type = "TXT"
       ttl  = 0,
