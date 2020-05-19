@@ -65,6 +65,22 @@ locals {
         "\"v=spf1 include:spf.tutanota.de -all\"",
       ]
     },
+    {
+      name = "mta-sts"
+      type = "CNAME"
+      ttl  = 0,
+      targets = [
+        "mta-sts.tutanota.com.",
+      ]
+    },
+    {
+      name = "_mta-sts"
+      type = "CNAME"
+      ttl  = 0,
+      targets = [
+        "_mta-sts.tutanota.com.",
+      ]
+    },
     # -------------------------------------------------- #
     # Domain verification
     # -------------------------------------------------- #
