@@ -40,6 +40,15 @@ locals {
         "hosting.gitbook.com.",
       ]
     },
+    # https://tutanota.com/howto/#whitelabel.
+    {
+      name = "mail"
+      type = "CNAME"
+      ttl  = 0,
+      targets = [
+        "login.tutanota.com.",
+      ]
+    },
     {
       name = ""
       type = "TXT"
