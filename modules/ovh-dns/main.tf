@@ -1,12 +1,25 @@
-# https://www.terraform.io/docs/configuration/terraform.html#terraform-block-syntax.
-terraform {
-  required_version = ">= 0.13"
+locals {
+  records = flatten([
+    for record in var.records : [
+      for target in record.targets : {
+        name   = record.name
+        type   = record.type
+        ttl    = record.ttl
+        target = target
+      }
+    ]
+  ])
+}
 
-  required_providers {
-    # https://www.terraform.io/docs/providers/ovh/.
-    ovh = {
-      source  = "ovh/ovh"
-      version = "~> 0.10"
-    }
+resource "ovh_domain_zone_record" "this" {
+  for_each = {
+    for record in local.records :
+    "${record.name}_${record.type}_${record.target}" => record
   }
+
+  zone      = var.zone
+  subdomain = each.value.name
+  fieldtype = each.value.type
+  ttl       = each.value.ttl
+  target    = each.value.target
 }
