@@ -11,6 +11,7 @@ locals {
   ])
 }
 
+# https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/ovh_domain_zone_record.
 resource "ovh_domain_zone_record" "this" {
   for_each = {
     for record in local.records :

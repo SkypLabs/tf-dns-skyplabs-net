@@ -1,4 +1,4 @@
-# https://www.terraform.io/docs/providers/ovh/.
+# https://registry.terraform.io/providers/ovh/ovh.
 provider "ovh" {
   endpoint           = var.ovh_endpoint
   application_key    = var.ovh_application_key
