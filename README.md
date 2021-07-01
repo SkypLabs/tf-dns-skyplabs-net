@@ -33,7 +33,7 @@ No resources.
 | <a name="input_ovh_application_key"></a> [ovh\_application\_key](#input\_ovh\_application\_key) | The OVH API application key | `string` | `null` | no |
 | <a name="input_ovh_application_secret"></a> [ovh\_application\_secret](#input\_ovh\_application\_secret) | The OVH API application secret | `string` | `null` | no |
 | <a name="input_ovh_consumer_key"></a> [ovh\_consumer\_key](#input\_ovh\_consumer\_key) | The OVH API consumer key | `string` | `null` | no |
-| <a name="input_ovh_endpoint"></a> [ovh\_endpoint](#input\_ovh\_endpoint) | Specify which API endpoint to use | `string` | n/a | yes |
+| <a name="input_ovh_endpoint"></a> [ovh\_endpoint](#input\_ovh\_endpoint) | Specify which API endpoint to use | `string` | `null` | no |
 
 ## Outputs
 
