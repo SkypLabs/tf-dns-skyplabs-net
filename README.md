@@ -2,7 +2,8 @@
 
 Terraform module for managing the `skyplabs.net` DNS zone.
 
-This module follows the [standard structure][standard-module-structure] described in the [Terraform documentation][terraform-docs].
+This module follows the [standard structure][standard-module-structure]
+described in the [Terraform documentation][terraform-docs].
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

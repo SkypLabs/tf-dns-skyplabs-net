@@ -1,3 +1,5 @@
+# Changelog
+
 ## v0.3.0 - Jan 01, 2021
 
 ### Enhancements
